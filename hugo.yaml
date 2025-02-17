@@ -75,7 +75,7 @@ params:
 
 
   env: production # 环境配置，生产环境会启用 Google Analytics、OpenGraph、Twitter 卡片和结构化数据。
-  title: BToo's Blog # 网站标题。
+  title: Btoo's Blog # 网站标题。
   description: "Share my skills" # 网站描述，通常用于 SEO。
   keywords: [Blog, Portfolio, Server, Network, PaperMod] # 网站关键词列表，提升 SEO。
   #author: btoo # 作者名称（单一作者）。
@@ -110,8 +110,8 @@ params:
 
 
   homeInfoParams: # 首页信息配置
-    Title: "Hi there 👋" # 首页标题。
-    Content: Welcome to my blog # 首页内容。
+    Title: "欢迎来到白糖的博客 👋" # 首页标题。
+    Content: Get busy living or get busy dying. <br> 即是记录，亦是分享。 # 首页内容。
 
 
 
@@ -125,7 +125,7 @@ params:
       url: "https://youtube.com/"
     - name: github
       title: Follow my Github
-      url: "https://github.com/"
+      url: "https://github.com/sponew"
     - name: Telegram
       title: Contact Me
       url: "https://t.me/"
