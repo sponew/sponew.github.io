@@ -5,7 +5,13 @@ title: 'Oh My Zsh'
 tags: ["Oh My Zsh", "Bash", "Shell", "Server", "Terminal"]
 ---
 
-# Oh my zsh
+# Oh my zsh 使用
+
+
+
+## zsh shell
+
+Zsh（Z Shell）是一个功能强大的命令行 shell，具有丰富的自定义选项、自动补全、插件支持和增强的脚本功能，常用于替代 bash 提供更高效的用户体验。
 
 
 
@@ -96,9 +102,6 @@ sed -i '/^ZSH_THEME=.*/c ZSH_THEME="ys"' ~/.zshrc
 
 ```zsh
 cat ~/.oh-my-zsh/plugins/git/git.plugin.zsh
-```
-
-```shell
 ......
 
 alias g='git'
@@ -151,7 +154,7 @@ alias -s tgz='tar zxvf'
 
 - 自动大小写更正 (sysin)
 
-  要访问 Desktop 文件夹，只需要 `cd de` 按 tab 键自动补全，或者查看 [README.md]()，只需要 `cat rea` 自动更正补全
+  要访问 Desktop 文件夹，只需要 `cd de` 按 tab 键自动补全，或者查看 [README.md](http://readme.md/)，只需要 `cat rea` 自动更正补全
 
 - 自动命令补全
 
