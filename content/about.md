@@ -7,20 +7,18 @@ summary: about
 
 
 
-***Get busy living or get busy dying. ————电影肖申克的救赎。***
+
+
+***Get busy living or get busy dying. ————肖申克的救赎。***
 
 
 # 关于我和博客
 
-
 **创立于：2025年2月11日**
-
 
 **程序：[Hugo](https://github.com/gohugoio/hugo)**
 
-
 **主机：Github Pages**
-
 
 **主题：[PaperMod](https://github.com/adityatelange/hugo-PaperMod)**
 

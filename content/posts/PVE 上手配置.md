@@ -1,6 +1,6 @@
 ---
 date: '2025-02-18T12:24:03+08:00'
-draft: true
+draft: false
 title: 'PVE 上手配置'
 #categories: ["通用技术"]
 tags: ["PVE", "虚拟化", "Server", "All in Boom"]
