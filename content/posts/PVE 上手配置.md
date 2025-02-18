@@ -1,12 +1,17 @@
 ---
-date: '2025-01-27T19:56:47+08:00'
+date: '2025-02-18T12:24:03+08:00'
 draft: true
-title: 'Pve上手配置'
+title: 'PVE 上手配置'
 #categories: ["通用技术"]
 tags: ["PVE", "虚拟化", "Server", "All in Boom"]
 ---
 
-# 修改 PVE 软件源
+
+
+
+***Proxmox Virtual Environment (PVE) 是一个开源的虚拟化平台，集成了 KVM 和 LXC 技术，提供易于管理的虚拟机和容器解决方案。***
+
+# 1. 修改 PVE 软件源
 
 Proxmox VE 基于 debian发行版，使用APT作为软件包管理器。
 
@@ -33,7 +38,7 @@ cp /etc/apt/sources.list.d/ceph.list /etc/apt/sources.list.d/ceph.list.bak
 
 编辑 pve-enterprise.list 文件，将其内容注释掉：
 
-```bash
+```
 vi /etc/apt/sources.list.d/pve-enterprise.list
 ```
 
@@ -111,9 +116,7 @@ systemctl restart pveproxy.service
 
 执行后清理浏览器缓存，重新登录验证。
 
-
-
-# QEMU/KVM
+# 2. QEMU/KVM
 
 ## 内核模块
 
@@ -231,8 +234,6 @@ update-initramfs -u -k all
 
 ## 中介设备 
 
-这里由于我的核显不支持 sr-iov ，故退而求其次使用 VGPU
-
 ### Intel GVT-g
 
 #### 主机配置
@@ -296,12 +297,69 @@ qm set VMID -hostpci0 00:02.0,mdev=i915-GVTg_V5_4
 
 ```
 
+# 3. PVE 常用命令
+
+**`qm` 命令**
+
+`qm` **命令是** `Proxmox VE`**（虚拟化平台）中的一个命令行工具，用于管理虚拟机。它主要用于创建、管理、配置虚拟机以及执行一些常见的虚拟化操作。以下是一些常用的命令：**
+
+```bash
+# 创建虚拟机
+qm create <vmid> --name <vm_name> --memory <memory_size> --net0 virtio,<network_bridge> --ide0 <storage>:<disk_size>
+# 启动虚拟机
+qm start <vmid>
+# 停止虚拟机
+qm stop <vmid>
+# 重启虚拟机
+qm reboot <vmid>
+# 查看虚拟机状态
+qm status <vmid>
+# 查看虚拟机配置
+qm config <vmid>
+# 导入虚拟机镜像
+qm importdisk <vmid> <disk_image.img> <storage>
+# 克隆虚拟机
+qm clone <vmid> <new_vmid> --name <new_vm_name>
+# 删除虚拟机
+qm destroy <vmid>
+# 备份虚拟机
+qm backup <vmid> <backup_path>
+```
+
+**`pvesh`命令及其他常用命令**
+
+```bash
+# 查看所有虚拟机列表
+pvesh get /nodes/<node>/qemu
+# 查看集群状态
+pvecm status
+# 查看节点的硬件信息
+pvesh get /nodes/<node>/hardware
+# 启动虚拟机
+pvesh create /nodes/<node>/qemu/<vmid>/status/start
+# 停止虚拟机
+pvesh create /nodes/<node>/qemu/<vmid>/status/stop
+# 重新启动虚拟机
+pvesh create /nodes/<node>/qemu/<vmid>/status/reboot
+# 创建虚拟机备份
+vzdump <vmid> --mode snapshot --storage <storage>
+# 查看 PVE 存储列表
+pvesh get /nodes/<node>/storage
+# 创建新的存储池
+pvesh create /nodes/<node>/storage --storage <storage_name> --type <storage_type> --content <content_type> --path <path_to_storage>
+# 更新 PVE 节点
+apt update && apt upgrade
+# 查看磁盘使用情况
+df -h
+# 查看系统日志
+journalctl -xe
+```
+
 
 
 # 参考
 
-
-
 [Proxmox VE Documentation](https://pve.proxmox.com/pve-docs/)
 
 [Promxox VE 中文文档](https://pve-doc-cn.readthedocs.io/zh-cn/latest/index.html#)
+

@@ -1,7 +1,7 @@
 ---
 date: '2025-02-11T15:23:01+08:00'
 draft: false
-title: '自建RustDesk远程桌面连接服务'
+title: '自建 RustDesk 远程桌面连接服务'
 tags: ["RustDesk", "Remote Desktop", "Server"]
 ---
 
