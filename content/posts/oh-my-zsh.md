@@ -2,7 +2,7 @@
 date: '2025-02-11T15:25:46+08:00'
 draft: false
 title: 'Oh My Zsh'
-tags: ["Oh My Zsh", "Bash", "Shell", "Server", "Terminal"]
+tags: ["Oh My Zsh", "Bash", "Shell", "Server", "Terminal", "Linux", "MacOS"]
 ---
 
 # Oh my zsh 使用

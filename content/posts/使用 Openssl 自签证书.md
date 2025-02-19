@@ -49,7 +49,7 @@ openssl x509 -req -days 365 -in myrequest.csr -signkey mykey.key -out mycert.crt
 ```
 
 ```TEXT
-  • -req 表示输入的是一个证书签名请求文件。
+  	• 	-req 表示输入的是一个证书签名请求文件。
 	•	-days 365 指定证书的有效期为 365 天（你可以根据需要调整有效期）。
 	•	-in myrequest.csr 指定之前生成的 CSR 文件。
 	•	-signkey mykey.key 使用之前生成的私钥进行签名。
@@ -67,13 +67,13 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
 ```
 
 ```TEXT
-	•	-x509								让 req 命令生成自签名证书而不是证书签名请求（CSR）。
-	•	-nodes							表示不对生成的私钥进行加密（不设置密码）。
-	•	-days 365						设置证书有效期为 365 天。
+	•	-x509					让 req 命令生成自签名证书而不是证书签名请求（CSR）。
+	•	-nodes					表示不对生成的私钥进行加密（不设置密码）。
+	•	-days 365				设置证书有效期为 365 天。
 	•	-newkey rsa:2048		同时生成一个 2048 位的 RSA 私钥。
 	•	-keyout mykey.key		指定生成的私钥文件名为 mykey.key。
 	•	-out mycert.crt			指定生成的证书文件名为 mycert.crt。
-	•	-subj								用于提供证书中的主题信息，避免在交互模式下逐项输入。
+	•	-subj					用于提供证书中的主题信息，避免在交互模式下逐项输入。
 ```
 
 
