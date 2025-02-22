@@ -8,7 +8,6 @@ tags: ["PVE", "虚拟化", "Server", "All in Boom"]
 
 
 
-
 ***Proxmox Virtual Environment (PVE) 是一个开源的虚拟化平台，集成了 KVM 和 LXC 技术，提供易于管理的虚拟机和容器解决方案。***
 
 # 1. 修改 PVE 软件源
@@ -317,7 +316,9 @@ qm status <vmid>
 # 查看虚拟机配置
 qm config <vmid>
 # 导入虚拟机镜像
-qm importdisk <vmid> <disk_image.img> <storage>
+# [OPTIONS]
+# --format <qcow2 | raw | vmdk>
+qm importdisk <vmid> <disk_image.img> <storage> [OPTIONS]
 # 克隆虚拟机
 qm clone <vmid> <new_vmid> --name <new_vm_name>
 # 删除虚拟机
@@ -355,6 +356,30 @@ df -h
 journalctl -xe
 ```
 
+**导入`ova`虚拟机文件**
+
+`ova`其实就是虚拟机的打包格式，所以可以直接解压，得到虚拟机配置文件和`vmdk`的虚拟硬盘
+
+比如这个镜像 `eveng.ova` 上传该文件到PVE /tmp 目录下并解压
+
+```shell
+cd /tmp
+tar -xvf eveng.ova
+
+#解压结果如下
+EVE-NG社区懒人版5.1-Large.ovf
+EVE-NG社区懒人版5.1-Large.mf
+EVE-NG社区懒人版5.1-Large-disk1.vmdk
+EVE-NG社区懒人版5.1-Large-disk2.vmdk
+```
+
+然后就是新建虚拟机，建好之后删除掉该虚拟机的虚拟硬盘，使用以上命令`qm importdisk`导入
+
+```shell
+qm importdisk 501 EVE-NG社区懒人版5.1-Large-disk1.vmdk local-lvm --format vmdk
+qm importdisk 501 EVE-NG社区懒人版5.1-Large-disk2.vmdk local-lvm --format vmdk
+```
+
 
 
 # 参考
@@ -362,4 +387,3 @@ journalctl -xe
 [Proxmox VE Documentation](https://pve.proxmox.com/pve-docs/)
 
 [Promxox VE 中文文档](https://pve-doc-cn.readthedocs.io/zh-cn/latest/index.html#)
-
