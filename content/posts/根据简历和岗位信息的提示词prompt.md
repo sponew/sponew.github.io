@@ -2,7 +2,7 @@
 date: '2025-03-02T11:28:41+08:00'
 draft: flase
 title: '根据简历和岗位信息的提示词prompt'
-tags: ["求职招呼语", "简历", "AI", "GPT", "DeppSeek"]
+tags: ["求职招呼语", "简历", "AI", "GPT", "DeppSeek", "prompt"]
 ---
 
 
