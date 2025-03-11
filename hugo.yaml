@@ -77,9 +77,9 @@ params:
   env: production # 环境配置，生产环境会启用 Google Analytics、OpenGraph、Twitter 卡片和结构化数据。
   title: Btoo's Blog # 网站标题。
   description: "Share my skills" # 网站描述，通常用于 SEO。
-  keywords: [Blog, Portfolio, Server, Network, PaperMod] # 网站关键词列表，提升 SEO。
+  keywords: [Blog, Portfolio, Server, Network, PaperMod, Share] # 网站关键词列表，提升 SEO。
   #author: btoo # 作者名称（单一作者）。
-  # author: ["Me", "You"] # 多作者配置。
+  # author: ["btoo", "sponew"] # 多作者配置。
   images: ["<link or path of image for opengraph, twitter-cards>"] # 用于 OpenGraph 和 Twitter 卡片的图片路径或链接。
   DateFormat: "January 2, 2006" # 日期格式。
   defaultTheme: auto # 默认主题：auto（自动根据系统）、dark（暗色模式）或 light（亮色模式）。
