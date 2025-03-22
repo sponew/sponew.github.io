@@ -6,7 +6,7 @@ languageCode: zh-cn # 语言
 
 enableInlineShortcodes: true # shortcode，类似于模板变量，可以在写 markdown 的时候便捷地插入，官方文档中有一个视频讲的很通俗
 hasCJKLanguage: true # 是否有 CJK 的字符
-enableRobotsTXT: true # 允许生成 robots.txt
+enableRobotsTXT: true # 允许生成 robots.txt 允许搜索引擎爬虫
 buildDrafts: false # 构建时是否包括草稿
 buildFuture: false # 构建未来发布的内容
 buildExpired: false # 构建过期的内容
@@ -77,7 +77,7 @@ params:
   env: production # 环境配置，生产环境会启用 Google Analytics、OpenGraph、Twitter 卡片和结构化数据。
   title: Btoo's Blog # 网站标题。
   description: "Share my skills" # 网站描述，通常用于 SEO。
-  keywords: [Blog, Portfolio, Server, Network, PaperMod, Share] # 网站关键词列表，提升 SEO。
+  keywords: [Blog, 博客, 白糖, BTOO, 服务器, Linux, Docker] # 网站关键词列表，提升 SEO。
   #author: btoo # 作者名称（单一作者）。
   # author: ["btoo", "sponew"] # 多作者配置。
   images: ["<link or path of image for opengraph, twitter-cards>"] # 用于 OpenGraph 和 Twitter 卡片的图片路径或链接。
