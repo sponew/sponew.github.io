@@ -1,7 +1,7 @@
 ---
 date: '2025-05-17T01:02:28+08:00'
 draft: false
-title: 'DingTalkRobotWebHook'
+title: '钉钉机器人WebHook调用脚本'
 tags: ["Robot", "DingTalk", "WebHook", "Alert"]
 ---
 
