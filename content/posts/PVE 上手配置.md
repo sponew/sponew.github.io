@@ -35,7 +35,7 @@ cp /etc/apt/sources.list.d/ceph.list /etc/apt/sources.list.d/ceph.list.bak
 
 ## 禁用企业源
 
-编辑 pve-enterprise.list 文件，将其内容注释掉：
+编辑 `pve-enterprise.list` 文件，将其内容注释掉：
 
 ```
 vi /etc/apt/sources.list.d/pve-enterprise.list

@@ -51,7 +51,7 @@ sudo docker run --name hbbr \
 
 **说明：**
 
-参数 --net=host 仅适用于 Linux 系统，它可以让 hbbs/hbbr 获取到对方真实 IP，而不是固定的容器 IP（例如 172.17.0.1）。如果 --net=host 正常运行，则端口映射（-p 选项）将失效，此时可移除 -p 参数。
+参数 `--net=host` 仅适用于 Linux 系统，它可以让 hbbs/hbbr 获取到对方真实 IP，而不是固定的容器 IP（例如 172.17.0.1）。如果 `--net=host` 正常运行，则端口映射（`-p` 选项）将失效，此时可移除 `-p` 参数。
 
 *如果在非 Linux 系统上遇到连接问题，请去掉* `--net=host` *参数。*
 
@@ -130,7 +130,7 @@ hbbs.example.com:21116
 
 ## **在可执行文件名中嵌入配置（仅限 Windows）**
 
-你可以将 rustdesk.exe 重命名为包含配置信息的文件名，格式如下：
+你可以将 `rustdesk.exe` 重命名为包含配置信息的文件名，格式如下：
 
 ```
 rustdesk-host=<host-ip-or-name>,key=<public-key-string>.exe
@@ -150,7 +150,7 @@ rustdesk-host=192.168.1.137,key=xfdsfsd32=32.exe
 
 ​	•	host 和 key 参数必须同时提供，否则配置将无法生效。
 
-​	•	如果密钥（key）中包含文件名不允许的字符，请删除 id_ed25519 文件，然后重启 hbbs/hbbr。系统会重新生成 id_ed25519.pub 文件。重复此过程，直至生成的密钥没有无效字符。
+​	•	如果密钥（key）中包含文件名不允许的字符，请删除 `id_ed25519` 文件，然后重启 hbbs/hbbr。系统会重新生成 `id_ed25519.pub` 文件。重复此过程，直至生成的密钥没有无效字符。
 
 
 
@@ -158,7 +158,7 @@ rustdesk-host=192.168.1.137,key=xfdsfsd32=32.exe
 
 与之前的版本不同，新版本强制要求使用 Key，但无需手动设置。在第一次运行时，hbbs 会自动生成一对密钥（id_ed25519 和 id_ed25519.pub 分别位于运行目录下），用于通信加密。
 
-如果在客户端配置中未填写 Key:（即未使用 id_ed25519.pub 中的内容），仍可完成连接，但通信将不会加密。
+如果在客户端配置中未填写 Key:（即未使用 `id_ed25519.pub` 中的内容），仍可完成连接，但通信将不会加密。
 
 ### 查看公钥内容：
 
@@ -166,4 +166,4 @@ rustdesk-host=192.168.1.137,key=xfdsfsd32=32.exe
 cat ./id_ed25519.pub
 ```
 
-若需更换 Key，请删除 id_ed25519 和 id_ed25519.pub 文件，然后重新启动 hbbs/hbbr，系统会自动生成新的密钥对。
+若需更换 Key，请删除 `id_ed25519` 和 `id_ed25519.pub` 文件，然后重新启动 hbbs/hbbr，系统会自动生成新的密钥对。

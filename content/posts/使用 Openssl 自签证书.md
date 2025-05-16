@@ -14,7 +14,7 @@ tags: ["SSL", "HTTPS"]
 openssl genrsa -out mykey.key 2048
 ```
 
-生成一个名为 mykey.key 的私钥文件。也可以根据需要调整密钥长度（例如 4096 位）。
+生成一个名为 `mykey.key` 的私钥文件。也可以根据需要调整密钥长度（例如 4096 位）。
 
 
 
