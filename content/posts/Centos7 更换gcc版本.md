@@ -1,7 +1,7 @@
 ---
 date: '2025-05-18T14:07:36+08:00'
 draft: flase
-title: 'Centos7 更换gcc版本'
+title: 'Centos7 更换 GCC 版本'
 tags: ["CentOS", "CentOS7", "GCC", "SCL Repo"]
 ---
 
