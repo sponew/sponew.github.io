@@ -1,7 +1,7 @@
 ---
 date: '2025-05-19T17:07:13+08:00'
 draft: flase
-title: 'CentOS7 yum仓库配置'
+title: 'CentOS7 YUM 仓库配置'
 tags: ["CentOS", "CentOS7", " Repo", "本地仓库", "Mirrors"]
 ---
 
